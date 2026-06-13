@@ -48,3 +48,22 @@ When you're done, clean up the cluster:
 kind delete cluster -n=cka-cluster-new
 ```
 
+---
+
+## 4. Managing Cluster Contexts
+
+When working with multiple clusters, `kubectl` uses **contexts** to know which cluster to talk to.
+
+### View All Contexts
+
+List all available clusters and see which one is currently active:
+```bash
+kubectl config get-contexts
+```
+
+
+### Switch to Another Cluster
+
+```bash
+kubectl config use-context [new-cluster-name]
+```
