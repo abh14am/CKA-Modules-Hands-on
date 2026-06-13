@@ -1,5 +1,3 @@
-# CKA (Certified Kubernetes Administrator) Study Guide
-
 ## What is KIND?
 
 **KIND (Kubernetes IN Docker)** is a tool for running local Kubernetes clusters using Docker containers as nodes. Instead of setting up real virtual machines, KIND spins up lightweight Docker containers that act as Kubernetes nodes — making it fast and easy to get a cluster running on your local machine.
