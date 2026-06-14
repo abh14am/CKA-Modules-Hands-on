@@ -27,7 +27,7 @@ Without a Service, you'd need to track individual pod IPs — which change every
 - Uses **label selectors** to find which pods to route traffic to
 - Abstracts the underlying pods from the consumers
 
-![Service Diagram](service.png)
+![Service Diagram](images/service.png)
 
 ---
 
@@ -61,7 +61,7 @@ kubectl describe service/<service-name>
 
 A **NodePort** service exposes your application on a **static port on every node** in the cluster. Anyone who can reach the node's IP can access the application via that port.
 
-![NodePort Diagram](node-port.png)
+![NodePort Diagram](images/node-port.png)
 
 ### Port Breakdown
 
@@ -159,7 +159,7 @@ This lists all pods, services, deployments, and replicasets that have the label 
 
 **ClusterIP** is the **default** service type in Kubernetes. It exposes the service on an internal IP address that is only reachable from within the cluster.
 
-![ClusterIP Diagram](ClusterIP.png)
+![ClusterIP Diagram](images/ClusterIP.png)
 
 ### Why ClusterIP?
 
@@ -224,7 +224,7 @@ kubectl describe svc/cluster-svc
 
 A **LoadBalancer** service exposes your application externally using a **cloud provider's load balancer** (e.g. AWS ALB, GCP Load Balancer, Azure LB). It distributes incoming traffic across multiple pods/nodes automatically.
 
-![LoadBalancer Diagram](loadbalancer.png)
+![LoadBalancer Diagram](images/loadbalancer.png)
 
 ### How it Works
 
