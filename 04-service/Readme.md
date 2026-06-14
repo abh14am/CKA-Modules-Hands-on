@@ -318,7 +318,4 @@ This creates a ClusterIP service by default. Add `--type=NodePort` or `--type=Lo
 ## References
 
 - [Kubernetes Docs — Service](https://kubernetes.io/docs/concepts/services-networking/service/)
-- [Kubernetes Docs — NodePort](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport)
-- [Kubernetes Docs — LoadBalancer](https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer)
-- [Kubernetes Docs — ExternalName](https://kubernetes.io/docs/concepts/services-networking/service/#externalname)
-- [Kubernetes Docs — DNS for Services and Pods](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/)
+
