@@ -1,0 +1,20 @@
+apiVersion: apps/v1   #kubectl explane rs
+kind: ReplicaSet
+metadata:
+  name: nginx-rs
+  labels:
+    env: demo
+spec:
+  template:
+    metadata:
+      labels:
+        env: demo
+      name: nginx
+    spec:
+      containers:
+      - image: nginx
+        name: nginx-pod
+  replicas: 3
+  selector:
+      matchLabels:     # every pod running with this particular label is now managed by replicaset
+        env: demo
