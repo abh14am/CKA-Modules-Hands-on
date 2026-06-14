@@ -4,23 +4,6 @@ This guide covers the two ways to create and manage Kubernetes resources: **Impe
 
 ---
 
-## Table of Contents
-
-- [Imperative vs Declarative](#imperative-vs-declarative)
-- [Imperative Method](#imperative-method)
-  - [Create a Pod](#1-create-a-pod)
-  - [List Pods](#2-list-pods)
-  - [Describe a Pod](#3-describe-a-pod)
-  - [Get Inside a Pod](#4-get-inside-a-pod)
-  - [Delete a Pod](#5-delete-a-pod)
-- [Declarative Method](#declarative-method)
-  - [Write the YAML](#1-write-the-yaml-file)
-  - [Apply the YAML](#2-apply-the-yaml-file)
-  - [Generate YAML from Command](#3-generate-yaml-using-dry-run)
-- [Quick Reference](#quick-reference)
-
----
-
 ## Imperative vs Declarative
 
 | | Imperative | Declarative |
@@ -163,3 +146,10 @@ kubectl run nginx-pod --image=nginx:latest --dry-run=client -o yaml > nginx-pod.
 | Force delete a pod | `kubectl delete pod nginx-pod --grace-period=0 --force` |
 | Create pod (declarative) | `kubectl apply -f nginx-pod.yaml` |
 | Generate YAML template | `kubectl run nginx-pod --image=nginx:latest --dry-run=client -o yaml > nginx-pod.yaml` |
+
+---
+
+## References
+
+- [Kubernetes Docs — Declarative Management of Kubernetes Objects](https://kubernetes.io/docs/tasks/manage-kubernetes-objects/declarative-config/)
+- [Kubernetes Docs — Managing Kubernetes Objects Using Imperative Commands](https://kubernetes.io/docs/tasks/manage-kubernetes-objects/imperative-command/)
