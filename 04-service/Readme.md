@@ -165,11 +165,6 @@ This lists all pods, services, deployments, and replicasets that have the label 
 
 Every pod gets a unique IP address — but that IP changes whenever the pod restarts. ClusterIP provides a **stable internal IP and DNS name** so other services can reliably communicate with a group of pods regardless of pod restarts.
 
-```
-Pod A  ──────────────────────────────────────►  ClusterIP Service  ──►  Pod B (replica 1)
-                                                  (stable IP/DNS)    ──►  Pod B (replica 2)
-                                                                     ──►  Pod B (replica 3)
-```
 
 ### What is an Endpoint?
 
@@ -177,7 +172,6 @@ An **Endpoint** is the actual IP address of a pod that the service routes traffi
 
 - When a pod starts, its IP is registered as an Endpoint for matching services
 - When a pod restarts and gets a new IP, the Endpoint is **automatically updated**
-- The Service always points to the current live pod IPs via Endpoints
 
 ```bash
 # View endpoints for all services
@@ -253,15 +247,10 @@ Every pod gets its own IP, but those IPs change on restart. The LoadBalancer sit
 
 ```bash
 vim loadbalancer.yaml
-```
-
-
-```bash
 kubectl apply -f loadbalancer.yaml
-
-# List services — EXTERNAL-IP column will show the load balancer IP once provisioned
 kubectl get svc
 ```
+
 
 > **KIND Cluster Note:** When using a KIND cluster, the LoadBalancer service will stay in **Pending** state indefinitely:
 > This is because KIND runs locally and has no cloud provider to provision an external load balancer. To test LoadBalancer locally, use tools like [MetalLB](https://metallb.universe.tf/) or use NodePort instead.
