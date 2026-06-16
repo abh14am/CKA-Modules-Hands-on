@@ -119,4 +119,4 @@ The job runs every 2 minutes (`*/2 * * * *`), spins up a busybox pod, prints the
 
 - [DaemonSet — Kubernetes Docs](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)
 - [CronJob — Kubernetes Docs](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)
-- [Taints and Tolerations](https://github.com/abh14am/CKA-Modules-Hands-on/tree/main/07-Taint-Tolerations)
+- [Taints and Tolerations - Git repo](https://github.com/abh14am/CKA-Modules-Hands-on/tree/main/09-Taint-Tolerations)
