@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    env: demo
+  name: nginx
+spec:
+  containers:
+  - image: nginx:latest
+    name: nginx
+  nodeName: cka-cluster-01-worker2
