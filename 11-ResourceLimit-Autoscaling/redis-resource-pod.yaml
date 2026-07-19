@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-pod
+  labels:
+    env: demo
+spec:
+  containers:
+  - name: redis-db
+    image: redis
+    resources:
+      requests:
+        memory: "64Mi"    #guaranteed memory reservation for scheduling
+        cpu: "250m"       #guaranteed CPU reservation for scheduling
+      limits:
+        memory: "128Mi"   #container cannot use more than this memory
+        cpu: "500m"       #container cannot use more than this CPU
