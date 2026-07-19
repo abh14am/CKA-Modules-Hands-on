@@ -24,7 +24,6 @@ This guide covers how Kubernetes manages container resources using **requests an
   - [Step 3 — Apply HPA](#step-3--apply-hpa)
   - [Step 4 — Simulate Load](#step-4--simulate-load)
   - [Step 5 — Monitor Autoscaling](#step-5--monitor-autoscaling)
-- [Quick Reference](#quick-reference)
 - [References](#references)
 
 ---
@@ -284,23 +283,6 @@ php-apache   Deployment/php-apache   134%/50%   1         10        10
 ```
 
 Stop the load generator by pressing `Ctrl+C` in the load generator terminal. The HPA will scale back down after a cooldown period (default: ~5 minutes).
-
----
-
-## Quick Reference
-
-| Action | Command |
-|---|---|
-| Apply metrics server | `kubectl apply -f metrics-server.yaml` |
-| View node resource usage | `kubectl top nodes` |
-| View pod resource usage | `kubectl top pods` |
-| Create HPA (imperative) | `kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10` |
-| Apply HPA (declarative) | `kubectl apply -f hpa.yaml` |
-| View HPA status | `kubectl get hpa` |
-| Watch HPA live | `kubectl get hpa php-apache --watch` |
-| Run load generator | `kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"` |
-| View deployments | `kubectl get deployment` |
-| View services | `kubectl get service` |
 
 ---
 
