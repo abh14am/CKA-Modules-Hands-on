@@ -238,14 +238,6 @@ Check HPA status:
 kubectl get hpa
 ```
 
-Expected output — before load is applied, targets will show low CPU:
-
-```
-NAME         REFERENCE               TARGETS   MINPODS   MAXPODS   REPLICAS
-php-apache   Deployment/php-apache   0%/50%    1         10        1
-```
-
-
 ### Step 4 — Simulate Load
 
 Open a **separate terminal** and run a load generator pod that continuously hits the php-apache service:
@@ -272,15 +264,6 @@ kubectl get hpa php-apache --watch
 ```
 
 You will see the CPU target climb above 50% and the replica count increase automatically:
-
-```
-NAME         REFERENCE               TARGETS    MINPODS   MAXPODS   REPLICAS
-php-apache   Deployment/php-apache   0%/50%     1         10        1
-php-apache   Deployment/php-apache   62%/50%    1         10        1
-php-apache   Deployment/php-apache   248%/50%   1         10        4
-php-apache   Deployment/php-apache   248%/50%   1         10        8
-php-apache   Deployment/php-apache   134%/50%   1         10        10
-```
 
 Stop the load generator by pressing `Ctrl+C` in the load generator terminal. The HPA will scale back down after a cooldown period (default: ~5 minutes).
 
