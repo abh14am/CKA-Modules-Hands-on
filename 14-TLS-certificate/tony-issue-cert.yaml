@@ -1,0 +1,32 @@
+apiVersion: certificates.k8s.io/v1
+kind: CertificateSigningRequest
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"certificates.k8s.io/v1","kind":"CertificateSigningRequest","metadata":{"annotations":{},"name":"tony"},"spec":{"expirationSeconds":86400,"request":"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSBSRVFVRVNULS0tLS0KTUlJQ1ZEQ0NBVHdDQVFBd0R6RU5NQXNHQTFVRUF3d0VkRzl1ZVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRApnZ0VQQURDQ0FRb0NnZ0VCQUxOVkRwWmJOVFVTZDVkLytoSlpMdHJEbWlqNU1xY0RzYlJPKytDTW9zaEVWcUpwCnd1dHYrdkcyVVh0dTkwVzBhZmFlenFvS01FMzJEdjZld01pa0lWb3paMWhzOUVMQkZpTXRYVHFSOERTNlhvblQKRjE2bm9JajRuNUV4L3NRZGw0WWVZb09BMWR3citUUFNCWno4Uk93RGVXWUZkUVlVL05GRmFCMTRhall5MTV6OApQeWNYRXJVcTVDcFlmN3A0NXJqZlpmNUlvZS9XdDRnZlk3OWQvaGl2WEtGM2FPUG5RdWF0T0ltZlk5Q05oTG1kCmtPUDFqY09BS0JSU21nb0haWUdXRHBITW5Xd0JGNEUrYUNIMS9vQnE0UG5CUER4U3UweG52b0x0eG9JRUl0MkgKWG5yZ0RNSmJlSnRwQmZ2ejh2aEtUUkh4azdmcW5BbzQrZDdEdkRrQ0F3RUFBYUFBTUEwR0NTcUdTSWIzRFFFQgpDd1VBQTRJQkFRQkN0eTlhWWxsUGl2R0pObHZEVW13emZwQ2JmZU9YamtCYXdkMk5vSnhsZDVwRkE2YVpXQlM5CjZLZnRBUzRGcnU0K2NFR1VvYUU0VWJSZDJxSGFINlFrdDFzcWpIeG0rMGcvaGZ2Sk5GTGRKT0FTckV5dFZ4cmIKYW44Z1M0Y242V3lPRURQN001NktxZ1RDelBPeG9qOUJ4SVlUUGRQWFA2dk1sVit0QzBrSU9iRzBISlVuWE90SgpXMm0vWk4rZno5OXFlNjU1WUJkYXN2QlJGQUZlSGpPNVVmMEw3VXVONndkNDlKVGF5OVAvc3g3aWM4cTluRklXCmZOSXFLM2ZKYTk1MUhVbGhWSGU2V25KTThaYW5NS3VaVnFuMWJPK1I5b21DdzRCMEtlSDlDbHROM3o5ZCtaaWoKMGlKczREWDlCanNhbDRzTnozMFNMTmNNc2c2MGZkbWoKLS0tLS1FTkQgQ0VSVElGSUNBVEUgUkVRVUVTVC0tLS0tCg==","signerName":"kubernetes.io/kube-apiserver-client","usages":["client auth"]}}
+  creationTimestamp: "2026-06-01T21:05:43Z"
+  name: tony
+  resourceVersion: "5767"
+  uid: 3c300e10-f4df-44a4-9f74-e1a544b1cc29
+spec:
+  expirationSeconds: 86400
+  extra:
+    authentication.kubernetes.io/credential-id:
+    - X509SHA256=b233843c8d403e78d31685cd639c7989262affba45671f00a57c7fe4c69135f7
+  groups:
+  - kubeadm:cluster-admins
+  - system:authenticated
+  request: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSBSRVFVRVNULS0tLS0K...  # tony's original CSR
+  signerName: kubernetes.io/kube-apiserver-client
+  usages:
+  - client auth
+  username: kubernetes-admin
+status:
+  certificate: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM5VENDQWQyZ0F3SUJBZ0lSQUtEcmtVbGd2...  # signed certificate
+  conditions:
+  - lastTransitionTime: "2026-06-01T21:12:04Z"
+    lastUpdateTime: "2026-06-01T21:12:04Z"
+    message: This CSR was approved by kubectl certificate approve.
+    reason: KubectlApprove
+    status: "True"
+    type: Approved
